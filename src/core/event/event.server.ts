@@ -32,7 +32,7 @@ export interface ServerEvent extends EventUtilities {
     value: any;
     to: PlayerId;
     tagName?: string;
-    visiblePlayers?: PlayerId[],
+    visiblePlayers?: PlayerId[];
   };
   [GameEventIdentifiers.RemoveFlagEvent]: {
     name: string;
@@ -206,6 +206,10 @@ export interface ServerEvent extends EventUtilities {
   [GameEventIdentifiers.GameOverEvent]: {
     loserIds: PlayerId[];
     winnerIds: PlayerId[];
+  };
+  [GameEventIdentifiers.RequestObserveEvent]: {
+    observerId: PlayerId;
+    requestObservedPlayerId?: PlayerId;
   };
   [GameEventIdentifiers.PlayerEnterRefusedEvent]: {
     playerId: PlayerId;
